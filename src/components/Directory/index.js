@@ -1,4 +1,3 @@
-import { read } from "fs";
 import React from 'react';
 import ShopMens from './../../assets/shopMens.jpg';
 import ShopWomens from './../../assets/shopWomens.jpg';

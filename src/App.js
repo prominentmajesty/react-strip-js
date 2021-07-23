@@ -30,13 +30,12 @@ const App = props => {
      userRef.onSnapshot(snapshot => {
        dispatch(setCurrentUser({
          id : snapshot.id,
-           ...snapshot.data()
+          ...snapshot.data() 
        }))
-     })
+     }) 
    }
    dispatch(setCurrentUser(userAuth));
  });
-
     return () => {
       authListener();
     };

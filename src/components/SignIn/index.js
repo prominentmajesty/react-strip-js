@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link,withRouter} from 'react-router-dom';
-import {signInUser, signInWithGoogle, resetAllAuthForms} from './../../redux/User/user.actions';
+import {emailSignInStart, signInWithGoogle, resetAllAuthForms} from './../../redux/User/user.actions';
 
 import './styles.scss';
 
@@ -13,6 +13,11 @@ const mapState = ({user}) => ({
     signInSuccess : user.signInSuccess
 })
 
+//NB THIS IS A COMMENT
+// const get_elemens = document.get_method();
+// for(var i = 0; i <= get_elemens.leght; i++){
+//     (i === 0) ?  console.log('i is less than 8') : console.log(' i is good to go... please breack');
+// }
 
 const SignIn = props => {
     const {signInSuccess} = useSelector(mapState);
@@ -38,9 +43,10 @@ const SignIn = props => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        dispatch(signInUser({email, password}));
+        dispatch(emailSignInStart({email, password}));
         // resetForm();
         // props.history.push('/');
+        // dispatch();
     
     }
 

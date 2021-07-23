@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import { signUpUser,resetAllAuthForms } from './../../redux/User/user.actions';
+import { signUpUser,resetAllAuthForms } from './../../redux/User/user.actions';  
 import './styles.scss';
 
 import AuthWrapper from './../AuthWrapper'
@@ -11,11 +11,11 @@ import Button from './../forms/Button';
 const mapState = ({ user }) => ({
     signUpSuccess : user.signUpSuccess,
     signUpError : user.signUpError
-});
+}); 
 
 const Signup = props => {
     const {signUpSuccess, signUpError} = useSelector(mapState);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); 
     const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -29,13 +29,13 @@ const Signup = props => {
             props.history.push('/');
         }
     },[signUpSuccess]);
-    
+       
     useEffect(() => {
         if(Array.isArray(signUpError) && signUpError.length > 0) {
-            setErrors();
+            setErrors(signUpError);
         }
     },[signUpError]);
- 
+  
     const reset = () => {
         setDisplayName('');
         setEmail(''); 

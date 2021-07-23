@@ -6,7 +6,7 @@ const HomepageLayout = props => {
     return(
         <div className="fullHeight">
             <Header {...props}/>
-            {props.children}
+                {props.children}
             <Footer />
         </div>
     )
